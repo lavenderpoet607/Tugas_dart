@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:tugas_apk/core/assets/assets.gen.dart';
-import 'package:tugas_apk/core/constants/colors.dart';
-import 'package:tugas_apk/core/core.dart';
-import 'package:tugas_apk/ui/home/pages/main_page.dart';
+
+import '../../core/core.dart';
+import '../home/pages/main_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -16,97 +15,57 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         children: [
           SizedBox(
-            height: 250.0,
+            height: 260.0,
             child: Center(
-              child: Assets.images.logoWhite.image(
-                width: 200,
-                height: 200,
-              ),
+              child: Assets.images.logoAppWhite.image(height: 55.0),
             ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
             child: SingleChildScrollView(
               child: ClipRRect(
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(20.0),
-              ),
-              child: Container(
-                color: AppColors.white,
-                padding: EdgeInsets.symmetric(
-                  horizontal: 28.0,
-                  vertical: 100.0,
-                ),
-                child: Column(
-                  children: [
-                    CustomTextField(
-                      controller: emailController,
-                      // decoration: InputDecoration(
-                        label: 'Email',
-                        hintText: 'Masukkan Email Anda',
-                        prefixIcon: Icon(Icons.email),
-                        
-                        // icon: null,
-                        // border: OutlineInputBorder(
-                        //   borderRadius: BorderRadius.circular(8.0)
-                        // ),
-                      // ),
-                    ),
-                    // SizedBox(height: 86.0,),
-                    SpacesHeight(50.0),
-                    CustomTextField(
-                      controller: passwordController,
-                      // decoration: InputDecoration(
-                        label: 'Password',
-                        hintText: 'Masukkan Password Anda',
-                        prefixIcon: Icon(Icons.lock),
-                        obscureText: true, 
-                        // icon: null,
-                        // border: OutlineInputBorder(
-                        //   borderRadius: BorderRadius.circular(8.0)
-                        // ),
-                      // ),
-                    ),
-                    SpacesHeight(50.0),
-                    Button.filled(
-                      onPressed: () {
-                        print('Email: $emailController');
-                        print('Password: $passwordController');
-                        Navigator.pushReplacement(
-                          context, 
-                          MaterialPageRoute(
-                            builder: (context) => const MainPage(),
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(20.0)),
+                child: ColoredBox(
+                  color: AppColors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 28.0, vertical: 44.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomTextField(
+                          controller: emailController,
+                          label: 'Email',
+                          isOutlineBorder: false,
                         ),
-                        );
-                      },
-                      label: 'login'
-                     ),
-                    // SizedBox(
-                    //   height: 50.0,
-                    //   child: ElevatedButton(                            
-                    //     onPressed: () {},
-                    //     style: ElevatedButton.styleFrom(
-                    //       minimumSize: Size(double.infinity, 50),
-                    //       backgroundColor: AppColors.primary,
-                    //       foregroundColor: AppColors.white,
-                    //     ),
-                    //     child: Text('Login'),
-                    //     ),
-                    // ),
-                    SpacesHeight(36.0),
-                    Center(
-                      child: Assets.images.logoIdn.image(width: 100, height: 50),
+                        const SpaceHeight(36.0),
+                        CustomTextField(
+                          controller: passwordController,
+                          label: 'Password',
+                          isOutlineBorder: false,
+                          obscureText: true,
+                        ),
+                        const SpaceHeight(86.0),
+                        Button.filled(
+                          onPressed: () {
+                            context.pushReplacement(const MainPage());
+                          },
+                          label: 'Login',
+                        ),
+                        const SpaceHeight(128.0),
+                        Center(
+                          child: Assets.images.logoIdn.image(height: 40.0),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
-            ),
             ),
           ),
         ],
       ),
     );
-      
-    
   }
 }

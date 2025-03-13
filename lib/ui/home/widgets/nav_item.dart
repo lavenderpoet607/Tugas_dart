@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tugas_apk/core/constants/colors.dart';  
+
 import '../../../core/core.dart';
 
 class NavItem extends StatelessWidget {
@@ -36,7 +36,7 @@ class NavItem extends StatelessWidget {
               ),
             ),
           ),
-          const SpacesHeight(4.0),
+          const SpaceHeight(4.0),
           Text(
             label,
             style: TextStyle(

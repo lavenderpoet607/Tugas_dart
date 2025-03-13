@@ -13,8 +13,6 @@ class CustomTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final bool readOnly;
   final bool isOutlineBorder;
-  final String hintText;
-  // final Icon icon;
 
   const CustomTextField({
     super.key,
@@ -27,10 +25,7 @@ class CustomTextField extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.readOnly = false,
-    this.isOutlineBorder = true, 
-    required this.hintText, 
-    // required this.icon,
-  
+    this.isOutlineBorder = true,
   });
 
   @override
@@ -46,7 +41,7 @@ class CustomTextField extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
-          const SpacesHeight(12.0,),
+          const SpaceHeight(12.0),
         ],
         TextFormField(
           controller: controller,
@@ -69,8 +64,7 @@ class CustomTextField extends StatelessWidget {
                     borderSide: const BorderSide(color: Colors.grey),
                   )
                 : null,
-            hintText: hintText,
-            // icon: prefixIcon,
+            hintText: label,
           ),
         ),
       ],

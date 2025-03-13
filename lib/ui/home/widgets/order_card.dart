@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:tugas_apk/core/constants/colors.dart';
-// import 'package:tugas_apk/core/assets/assets.gen.dart';
-// import 'package:tugas_apk/core/components/spaces.dart';
-// import 'package:tugas_apk/core/constants/colors.dart';
-import 'package:tugas_apk/ui/home/models/product_model.dart';
+
 import '../../../core/core.dart';
+import '../models/product_model.dart';
 
 class OrderCard extends StatelessWidget {
-  final ProductModel items;
-  const OrderCard({super.key, required this.items});
+  final ProductModel item;
+  const OrderCard({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +23,7 @@ class OrderCard extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  items.productName,
+                  item.productName,
                   style: const TextStyle(fontSize: 15.0),
                 ),
               ),
@@ -52,21 +49,21 @@ class OrderCard extends StatelessWidget {
             ],
           ),
           Text(
-            items.type,
+            item.type,
             style: const TextStyle(fontSize: 11.0),
           ),
-          const SpacesHeight(8.0),
+          const SpaceHeight(8.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                items.price.currencyFormatRp,
+                item.price.currencyFormatRp,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               ValueListenableBuilder(
                 valueListenable: quantityNotifier,
                 builder: (context, value, _) => Text(
-                  (items.price * value).currencyFormatRp,
+                  (item.price * value).currencyFormatRp,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),

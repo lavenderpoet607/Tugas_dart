@@ -1,5 +1,4 @@
 class ProductModel {
-
   final String productName;
   final String type;
   final int price;
@@ -15,14 +14,23 @@ class ProductModel {
 
 final products = [
   ProductModel(
-    productName: 'Product 1',
-    type: 'Type 1',
-    price: 100000,
+    productName: 'Tiket Masuk Dewasa',
+    type: 'Nusantara',
+    price: 50000,
   ),
-
   ProductModel(
-    productName: 'Product 2',
-    type: 'Type 2',
-    price: 200000,
+    productName: 'Tiket Masuk Anak',
+    type: 'Nusantara',
+    price: 20000,
+  ),
+  ProductModel(
+    productName: 'Tiket Masuk Dewasa',
+    type: 'Mancanegara',
+    price: 15000,
+  ),
+  ProductModel(
+    productName: 'Tiket Masuk Anak',
+    type: 'Mancanegara',
+    price: 40000,
   ),
 ];
