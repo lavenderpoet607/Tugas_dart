@@ -18,9 +18,7 @@ int remedial = 60;
 double nilaiakhir = (uts + uas) / 2;
 
 // Menentukan status kelulusan berdasarkan nilai akhir, UTS, dan UAS
-String status = (nilaiakhir >= 70 && uts >= remedial && uas >= remedial)
-    ? "Lulus"
-    : "Tidak Lulus";
+String status = (nilaiakhir >= 70 && uts >= remedial && uas >= remedial) ? "Lulus" : "Tidak Lulus";
 
 // Fungsi utama yang akan dijalankan pertama kali
 void main() {
