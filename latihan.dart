@@ -30,8 +30,13 @@ void main () { // Menampilkan output data yang diberikan
     print(bintang); // Menampilkan karakter * pada i sebanyak 5 kali secara horizontal
   }
 
-  print(""); // Memberikan baris kosong untuk memisahkan output
+  print("");
+  print("atau bintang ini");
+  for (int i = 1; i <= 5; i++) { // Loop untuk menampilkan karakter * sebanyak 5 kali secara horizontal
+    print ("*" * 5); // Menampilkan karakter * pada i sebanyak 5 kali secara horizontal
+   }
 
+  print(""); // Memberikan baris kosong untuk memisahkan output
   print("Tugas 3");
   // menampilkan nama berulang sebanyak 4 kali
   for (int i = 1; i <= 4; i++) { // Loop untuk menampilkan nama berulang sebanyak 4 kali
@@ -39,18 +44,20 @@ void main () { // Menampilkan output data yang diberikan
   }
 
   print(""); // Memberikan baris kosong untuk memisahkan output
-
   print("Tugas 4");
 
   // Menampilkan perulangan dalam list
-  List<String> buah = ["Apel", "Jeruk", "Mangga", "Anggur"]; // List yang berisi nama-nama buah
-  print("Daftar Buah:"); // Memberikan judul untuk output daftar buah
-  for (String n in buah) { // Loop untuk menampilkan setiap nama buah dalam list
-    print("Saya Suka $n"); // Menampilkan nama buah dengan format "Saya Suka [nama buah]"
+  int indexBuah = 1; // Variabel untuk menghitung nomor urut buah
+  List<String> buah = ["Apel", "Jeruk", "Mangga", "Anggur"]; // List yang berisi nama-nama buah 
+  for (var entry in buah.asMap().entries) { // Loop untuk menampilkan setiap buah dalam list
+  int _ = entry.key; // Mengambil index dari setiap buah dalam list
+  String _ = entry.value; // Mengambil nama buah dari setiap entry dalam list
+ if (indexBuah > 1) break; // Jika indexBuah sama dengan 1, keluar dari loop
+    print("Saya Suka Buah ${buah[indexBuah + 2]} & ${buah[indexBuah - 1]} dari ${buah.length} buah yaitu ${buah.join(", ")}"); 
+    // Menampilkan nomor urut dan nama buah
   }
 
   print(""); // Memberikan baris kosong untuk memisahkan output
-
   print("Tugas 5");
 
   // Menampilkan list daftar belanja menggunakan loop.
